@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Our First PWA</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image" href="images/icons/32x32.png">
+	<!-- CSS files -->
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- App Manifest -->
+	<link rel="manifest" href="manifest.json">
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Guess PWA">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="apple-touch-icon" href="images/icons/152x152.png">
+	<meta name="msapplication-TileImage" content="images/icons/144x144.png">
+	<meta name="msapplication-TileColor" content="#2F3BA2">
+	<!-- Browser theme color -->
+	<meta name="theme-color" content="#2c3e50">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><i class="material-icons">video_library</i>MovieMango</a>
+      <ul class="right hide-on-med-and-down">
+        <li id="btn-add"><a><i class="material-icons">add</i></a></li>
+        <li id="btn-refresh"><a><i class="material-icons">refresh</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+	<div class="wrapper">
+	  <div class="card movie-card movie-card-template" hidden>
+	  	<figure class="movie-poster">
+	  		<img id="movie-poster" src="images/Batman The Killing Joke.png">
+  		</figure>
+  		<div class="movie-details">
+				<figcaption>
+					<p class="movie-title" id="movie-title">Batman: The Killing Joke</p>
+					<div class="movie-release"><i class="material-icons">date_range</i><p>  2016</p></div>
+					<div class="movie-description">
+						<p id="movie-description">Batman (Kevin Conroy) must save Commissioner Gordon (Ray Wise) from the Joker's (Mark Hamill) twisted quest to drive him insane.</p>
+					</div>
+				</figcaption>
+				<footer class="transition">
+						<p>See More</p>
+				</footer>
+		</div>
+	  </div>
+  </div>
+
+	<div class="dialog-container hide-element">
+    <div class="dialog">
+      <div class="dialog-title">Add new movie</div>
+      <div class="dialog-body">
+				<div class="row">
+	        <div class="input-field col s12">
+	          <input id="search" type="text" class="validate col s10">
+	          <label for="search">Search</label>
+	          <i class="material-icons col s2" id="btn-search">search</i>
+	        </div>
+	      </div>
+	      <div id="search-results" class="search-results">
+	      	<img src="" id="movie-search-poster" class="round-image transition hide-element">
+	      	<p id="movie-search-title" class="hide-element"></p>
+	      	<p id="movie-search-id" hidden></p>
+	      	<p id="movie-search-plot" hidden></p>
+	      </div>
+      </div>
+      <div class="dialog-buttons">
+        <button id="btn-add-movie" class="button waves-effect waves-light btn">Add</button>
+        <button id="btn-add-cancel" class="button waves-effect waves-light btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="loader" hidden>
+  	<svg viewbox="0 0 32 32" width="32" height="32">
+  		<circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+  	</svg>
+  </div>
+
+  <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>

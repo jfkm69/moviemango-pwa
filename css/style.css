@@ -1,0 +1,222 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: column;
+}
+
+.navbar {
+	flex: 1;
+}
+
+.wrapper {
+	padding: 20px 20px;
+	flex: 1;
+	flex-basis: 90%;
+}
+
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.loader #spinner {
+	stroke: #673AB7;
+	stroke-width: 4px;
+	-webkit-transform-origin: 50%;
+	-moz-transform-origin: 50%;
+	-ms-transform-origin: 50%;
+	-o-transform-origin: 50%;
+	transform-origin: 50%;
+	-webkit-animation: line 1.6s ease-in-out  infinite, rotate 0.6s linear infinite;
+	-o-animation: line 1.6s ease-in-out infinite, rotate 0.6s linear infinite;
+	animation: line 1.6s ease-in-out infinite, rotate 0.6s linear infinite;
+}
+
+.card {
+	display: flex;
+	flex-direction: row;
+}
+
+.wrapper:first-of-type(div) {
+	display: none;
+}
+
+.movie-poster {
+	flex: 1;
+	margin: 0px;
+}
+
+.movie-poster img {
+	height: 300px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.movie-details{
+	flex: 4;
+	display: flex;
+	flex-flow: column;
+}
+
+.card figcaption {
+	margin: 10px;
+	flex: 4;
+}
+
+.movie-title {
+	margin: 0px;
+}
+
+.movie-release i {
+	float: left;
+}
+
+.movie-release p {
+	margin-left: 5px;
+}
+
+.movie-details footer {
+	border-top: 1px solid lightgrey;
+	text-align: center;
+	object-position: bottom;
+	flex: 1;
+}
+
+.movie-details footer:hover {
+	cursor: pointer;
+	background-color: lightgrey;
+}
+
+.dialog-container {
+  background: rgba(0, 0, 0, 0.57);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dialog {
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.24), 0 14px 28px rgba(0, 0, 0, 0.48);
+  min-width: 280px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) translateY(30px);
+          transform: translate(-50%, -50%) translateY(30px);
+  -webkit-transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+  transition: -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+  transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
+  transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s, -webkit-transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s; }
+
+.dialog > div {
+  padding-left: 24px;
+  padding-right: 24px; }
+
+.dialog-title {
+  padding-top: 20px;
+  font-size: 1.25em;
+}
+
+.dialog-body {
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.dialog-body select {
+    width: 100%;
+    font-size: 2em; }
+
+.dialog-buttons {
+  padding: 8px !important;
+  float: right;
+}
+
+.search-results {
+	margin-bottom: 25px;
+}
+
+.search-results:hover {
+	cursor: pointer;
+
+}
+
+.search-results img {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+.search-results p {
+	margin: 10px 0px 0px 15px;
+	float: left;
+}
+
+.transition {
+	-webkit-animation: 0.3 ease-in-out all;
+	-o-animation: 0.3 ease-in-out all;
+	animation: 0.3 ease-in-out all;
+}
+
+.show-element {
+	display: block;
+}
+
+.hide-element {
+	display: none;
+}
+
+.round-image {
+	border-radius: 100%;
+}
+
+/*Media Rules*/
+@media (min-width: 768px) {
+	.card {
+		display: inline-block;
+	}
+}
+@media (min-width: 992px) {
+	.card {
+		display: inline-block;
+	}
+}
+@media (min-width: 1200px) {
+	.card {
+		display: flex;
+	}
+}
+
+/*Animation Rules*/
+@keyframes line {
+	0% {
+		stroke-dasharray: 2, 85.964;
+		-webkit-transform: rotate(0);
+		transform: rotate(0); }
+	50% {
+		stroke-dasharray: 65.973, 21.9911;
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dasharray: 2, 85.964;
+		stroke-dashoffset: -65.973;
+		-webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+	}
+}
