@@ -20,6 +20,12 @@ body {
 	flex: 1;
 }
 
+.brand-logo img {
+	float: left;
+	width: 32px;
+	height: 32px;
+	margin-top: 13px;
+}
 .wrapper {
 	padding: 20px 20px;
 	flex: 1;
